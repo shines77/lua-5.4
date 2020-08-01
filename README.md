@@ -65,7 +65,7 @@ Indicates that your command line terminal is not a command prompt for visual stu
 
 ## Fibonacci Test
 
-Run the `fibonacci.lua` use `luajit` on Windows:
+Run the `fibonacci.lua` use `lua` on Windows:
 
 ```bash
 cd test
@@ -78,24 +78,24 @@ Source code of `fibonacci.lua`:
 
 ```lua
 function fibonacci(n)
-  if n >= 3 then
-  	return fibonacci(n - 2) + fibonacci(n - 1)
-  else
-    return 1
-  end
+    if n >= 3 then
+        return fibonacci(n - 2) + fibonacci(n - 1)
+    else
+        return 1
+    end
 end
 
 function main()
-	print("Enter a number [1-45]: ")
-	local n = io.read("*number")
+    print("Enter a number [1-45]: ")
+    local n = io.read("*number")
 
-	print("");
-	local startTime = os.clock()
-	local fib_n = fibonacci(n)
-	local endTime = os.clock()
+    print("");
+    local startTime = os.clock()
+    local fib_n = fibonacci(n)
+    local endTime = os.clock()
 
-	print("fibonacci(40) = "..fib_n.."\n")
-	print("Used time: "..(endTime - startTime).." seconds")
+    print("fibonacci(40) = "..fib_n.."\n")
+    print("Used time: "..(endTime - startTime).." seconds")
 end
 
 main()
