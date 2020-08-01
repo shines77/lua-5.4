@@ -5,9 +5,9 @@ This is Lua 5.4.0, released on 18 Jun 2020.
 For installation instructions, license details, and
 further information about Lua, see doc/readme.html.
 
-## [Chinese/中文]
+## [中文 / Chinese]
 
-这是 `Lua` 5.4.0，本人参考 `luajit` 2.05 的 `msvcbuild.bat`，改了一下，可以在 `Windows` 下使用 `MSVC` 编译。
+这是 `Lua` 5.4.0，本人参考 `luajit` 2.05 的 `msvcbuild.bat`，改了一下，可以在 `Windows` 下使用 `MSVC` 编译，并且提供了编译后的 `Windows` 版可执行文件。
 
 ## 使用 MSVC 编译
 
@@ -24,7 +24,7 @@ msvcbuild.bat
 
 然后运行 `msvcbuild.bat`，等待一会，即编译完成。
 
-## FAQ
+## 常见问题
 
 执行命令以后，如果看到如下的提示：
 
@@ -34,9 +34,11 @@ You must open a "Visual Studio .NET Command Prompt" to run this script
 
 则说明你的命令行终端不是 `Visual Studio` 的命令行提示符。
 
+---------------------------------------------------------------------------------
+
 ## [English]
 
-This is `Lua` 5.4.0, I refer to `luajit` 2.05 write a `msvcbuild.bat`, and now you can compile it use MSVC under windows.
+This is `Lua` 5.4.0, I refer to `luajit` 2.05 write a `msvcbuild.bat`, and now you can compile it use MSVC under windows. And I have uploaded the executable file of Windows version.
 
 ## Building with MSVC
 
