@@ -55,10 +55,59 @@ Check the `msvcbuild.bat` file for more options. Then follow the installation in
 
 ## FAQ
 
-After executing the command, if you see the following prompt
+After executing the command, if you see the following prompt:
 
 ```bash
 You must open a "Visual Studio .NET Command Prompt" to run this script
 ```
 
 Indicates that your command line terminal is not a command prompt for visual studio.
+
+## Fibonacci Test
+
+Run the `fibonacci.lua` use `luajit` on Windows:
+
+```bash
+cd test
+.\fibonacci.bat
+```
+
+## fibonacci.lua
+
+Source code of `fibonacci.lua`:
+
+```lua
+function fibonacci(n)
+  if n >= 3 then
+  	return fibonacci(n - 2) + fibonacci(n - 1)
+  else
+    return 1
+  end
+end
+
+function main()
+	print("Enter a number [1-45]: ")
+	local n = io.read("*number")
+
+	print("");
+	local startTime = os.clock()
+	local fib_n = fibonacci(n)
+	local endTime = os.clock()
+
+	print("fibonacci(40) = "..fib_n.."\n")
+	print("Used time: "..(endTime - startTime).." seconds")
+end
+
+main()
+```
+
+## Test Result
+
+```bash
+Enter a number [1-45]:
+40
+
+fibonacci(40) = 102334155
+
+Used time: 9.90 seconds
+```
