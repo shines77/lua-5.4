@@ -14,6 +14,7 @@
 @if not defined INCLUDE goto :FAIL
 
 @setlocal
+@set MSVC_ARCH=%Platform% %CommandPromptType% %PreferredToolArchitecture%
 @set LUA_COMPILE=cl /nologo /c /O2 /W3 /D_CRT_SECURE_NO_DEPRECATE /D_CRT_STDIO_INLINE=__declspec(dllexport)__inline
 @set LUA_LINK=link /nologo
 @set LUA_MT=mt /nologo
@@ -77,7 +78,7 @@ if exist %LUA_DLLNAME%.manifest^
 %LUA_LINK% /out:lua.exe lua.obj %LUA_LIBNAME%
 @if errorlevel 1 goto :BAD
 if exist lua.exe.manifest^
-  %LJMT% -manifest lua.exe.manifest -outputresource:lua.exe
+  %LUA_MT% -manifest lua.exe.manifest -outputresource:lua.exe
 
 @rem STATIC LIB
 %LUA_COMPILE% /I "." %BASE_C%
@@ -90,10 +91,10 @@ if exist lua.exe.manifest^
 %LUA_LINK% /out:luac.exe luac.obj %LUA_LIBNAME%
 @if errorlevel 1 goto :BAD
 if exist luac.exe.manifest^
-  %LJMT% -manifest luac.exe.manifest -outputresource:luac.exe
+  %LUA_MT% -manifest luac.exe.manifest -outputresource:luac.exe
 
 @echo.
-@echo === Successfully built Lua for Windows/%LJARCH% ===
+@echo === Successfully built Lua for Windows/%MSVC_ARCH% ===
 
 @goto :END
 :BAD
